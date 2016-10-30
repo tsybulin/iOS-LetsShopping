@@ -1,0 +1,87 @@
+
+/* Class = "UIButton"; normalTitle = "Отменить"; ObjectID = "3ld-OM-miT"; */
+"3ld-OM-miT.normalTitle" = "Отменить";
+
+/* Class = "UILabel"; text = "Amount:"; ObjectID = "4Wn-kn-ZYZ"; */
+"4Wn-kn-ZYZ.text" = "Количество:";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "97Q-NY-akQ"; */
+"97Q-NY-akQ.text" = "1";
+
+/* Class = "UILabel"; text = "Название категории"; ObjectID = "AIT-NA-2Fg"; */
+"AIT-NA-2Fg.text" = "Название категории";
+
+/* Class = "UILabel"; text = "Название"; ObjectID = "CIw-lJ-LHx"; */
+"CIw-lJ-LHx.text" = "Название";
+
+/* Class = "UILabel"; text = "Категория"; ObjectID = "DNf-cB-Sue"; */
+"DNf-cB-Sue.text" = "Категория";
+
+/* Class = "UIButton"; normalTitle = "Количество"; ObjectID = "FDt-4b-hTY"; */
+"FDt-4b-hTY.normalTitle" = "Количество";
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "HUY-xj-bz7"; */
+"HUY-xj-bz7.normalTitle" = "OK";
+
+/* Class = "UINavigationItem"; title = "Категории"; ObjectID = "K2O-oJ-0NM"; */
+"K2O-oJ-0NM.title" = "Категории";
+
+/* Class = "UILabel"; text = "Product name"; ObjectID = "LGi-Iy-Hmt"; */
+"LGi-Iy-Hmt.text" = "Product name";
+
+/* Class = "UIButton"; normalTitle = "Сохранить"; ObjectID = "NQw-d8-xRf"; */
+"NQw-d8-xRf.normalTitle" = "Сохранить";
+
+/* Class = "UINavigationItem"; title = "Категория"; ObjectID = "Nlr-XU-zmc"; */
+"Nlr-XU-zmc.title" = "Категория";
+
+/* Class = "UITextField"; text = "Список"; ObjectID = "P2k-6z-P7c"; */
+"P2k-6z-P7c.text" = "Список";
+
+/* Class = "UILabel"; text = "Количество:"; ObjectID = "QH2-yR-wb7"; */
+"QH2-yR-wb7.text" = "Количество:";
+
+/* Class = "UILabel"; text = "М"; ObjectID = "TwZ-Ra-bpC"; */
+"TwZ-Ra-bpC.text" = "М";
+
+/* Class = "UITextField"; placeholder = "Наименование"; ObjectID = "Ulm-fK-4Wq"; */
+"Ulm-fK-4Wq.placeholder" = "Наименование";
+
+/* Class = "UILabel"; text = "Продукт"; ObjectID = "VeZ-eB-THc"; */
+"VeZ-eB-THc.text" = "Продукт";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "aRu-mf-Vau"; */
+"aRu-mf-Vau.text" = "1";
+
+/* Class = "UILabel"; text = "Продукт"; ObjectID = "eOQ-1K-icc"; */
+"eOQ-1K-icc.text" = "Продукт";
+
+/* Class = "UINavigationItem"; title = "SHARE"; ObjectID = "ilJ-af-6U3"; */
+"ilJ-af-6U3.title" = "SHARE";
+
+/* Class = "UILabel"; text = "Хлеб, вода, макароны, сыр, молоко, квас"; ObjectID = "lcb-TB-ibe"; */
+"lcb-TB-ibe.text" = "Хлеб, вода, макароны, сыр, молоко, квас";
+
+/* Class = "UILabel"; text = "Название"; ObjectID = "u74-P0-b0i"; */
+"u74-P0-b0i.text" = "Название";
+
+/* Class = "UILabel"; text = "List name"; ObjectID = "uBx-U4-pv1"; */
+"uBx-U4-pv1.text" = "List name";
+
+/* Class = "UINavigationController"; title = "Main Navigation"; ObjectID = "un4-2C-kh4"; */
+"un4-2C-kh4.title" = "Main Navigation";
+
+/* Class = "UITextField"; placeholder = "Продукт"; ObjectID = "upG-Er-9qQ"; */
+"upG-Er-9qQ.placeholder" = "Продукт";
+
+/* Class = "UINavigationItem"; title = "Списки"; ObjectID = "vpV-52-U5Q"; */
+"vpV-52-U5Q.title" = "Списки";
+
+/* Class = "UILabel"; text = "Цвет"; ObjectID = "wVz-8V-jbd"; */
+"wVz-8V-jbd.text" = "Цвет";
+
+"pKm-AO-E77.title" = "О программе" ;
+"TUw-fF-NQc.text" = "Айда в шопу!" ;
+"L0k-wq-bUD.normalTitle" = "Послать письмо" ;
+
+"Cls-l0-eju.text" = "Сейчас список пуст. Потяните вниз для обновления" ;

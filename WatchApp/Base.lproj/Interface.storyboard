@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="gEt-l4-6Su">
+                            <items>
+                                <imageView width="40" height="32" alignment="left" image="logo" contentMode="right" id="skk-L4-L30"/>
+                                <label width="1" height="44" alignment="left" text="Let's Shopping!" textAlignment="left" numberOfLines="2" id="MjB-6J-dld" userLabel="lblName">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <separator width="0.80000000000000004" alignment="center" id="tEJ-2r-6kJ"/>
+                                <label alignment="left" text="v 1.2" textAlignment="left" id="mDn-Yz-bB0" userLabel="lblAmount">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="Vdb-Y4-G3u" userLabel="Buttons">
+                            <items>
+                                <button alignment="left" backgroundImage="prev" id="nG8-Lc-41s" userLabel="btnPrev">
+                                    <connections>
+                                        <action selector="prevTouched" destination="AgC-eL-Hgc" id="d26-QT-ff9"/>
+                                    </connections>
+                                </button>
+                                <button alignment="center" verticalAlignment="bottom" backgroundImage="unshopped" id="7k6-6K-7Iy" userLabel="btnMark">
+                                    <connections>
+                                        <action selector="markTouched" destination="AgC-eL-Hgc" id="4np-hx-Rap"/>
+                                    </connections>
+                                </button>
+                                <button alignment="right" backgroundImage="next" id="Mg4-LF-BRg" userLabel="btnNext">
+                                    <connections>
+                                        <action selector="nextTouched" destination="AgC-eL-Hgc" id="YEX-6w-2kE"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="btnMark" destination="7k6-6K-7Iy" id="3TH-KG-zPd"/>
+                        <outlet property="lblAmount" destination="mDn-Yz-bB0" id="i55-n2-B6q"/>
+                        <outlet property="lblName" destination="MjB-6J-dld" id="bFt-Kb-Goi"/>
+                        <outlet property="sepName" destination="tEJ-2r-6kJ" id="KNl-Qt-x2J"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+    </scenes>
+</document>

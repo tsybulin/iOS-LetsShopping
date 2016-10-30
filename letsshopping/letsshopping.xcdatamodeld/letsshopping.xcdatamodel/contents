@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Xcode 7.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Commodity" representedClassName="Commodity" syncable="YES">
+        <attribute name="amount" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="num" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="shopped" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="product" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="commodities" inverseEntity="Product" syncable="YES"/>
+        <relationship name="shoplist" maxCount="1" deletionRule="Nullify" destinationEntity="Shoplist" inverseName="commodities" inverseEntity="Shoplist" syncable="YES"/>
+    </entity>
+    <entity name="Product" representedClassName="Product" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="commodities" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Commodity" inverseName="product" inverseEntity="Commodity" syncable="YES"/>
+        <relationship name="shopCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ShopCategory" inverseName="products" inverseEntity="ShopCategory" syncable="YES"/>
+    </entity>
+    <entity name="ShopCategory" representedClassName="ShopCategory" syncable="YES">
+        <attribute name="clr" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="intsort" optional="YES" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="products" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Product" inverseName="shopCategory" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <entity name="Shoplist" representedClassName="Shoplist" syncable="YES">
+        <attribute name="intsort" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="commodities" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Commodity" inverseName="shoplist" inverseEntity="Commodity" syncable="YES"/>
+    </entity>
+    <fetchRequest name="CommodityByShoplist" entity="Commodity" predicateString="shoplist == $SHOPLIST"/>
+    <fetchRequest name="ProductByName" entity="Product" predicateString="name == $NAME"/>
+    <fetchRequest name="ShopCategoryByName" entity="ShopCategory" predicateString="name == $NAME"/>
+    <fetchRequest name="ShoplistByName" entity="Shoplist" predicateString="name == $NAME"/>
+    <elements>
+        <element name="Commodity" positionX="-324" positionY="63" width="128" height="118"/>
+        <element name="Product" positionX="-54" positionY="0" width="128" height="90"/>
+        <element name="ShopCategory" positionX="178" positionY="-0" width="128" height="28"/>
+        <element name="Shoplist" positionX="-54" positionY="162" width="128" height="88"/>
+    </elements>
+</model>

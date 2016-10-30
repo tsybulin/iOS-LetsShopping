@@ -1,0 +1,209 @@
+{
+    "categories": [
+                   {
+                   "name": "Juice-Water",
+                   "clr": "#0000ff",
+                   "intsort": 1,
+                   "products": [
+                                {"name": "Water"},
+                                {"name": "kvass"},
+                                {"name": "Cola"},
+                                {"name": "Lemonade"},
+                                {"name": "Juice"},
+                                {"name": "Pepsi"},
+                                {"name": "Soda"},
+                                {"name": "Tea"},
+                                {"name": "Coffee"},
+                                {"name": "Morse"}
+                                ]
+                   },
+                   {
+                   "name": "Bread-Loaf",
+                   "clr": "#ffff00",
+                   "intsort": 2,
+                   "products": [
+                                {"name": "Baton"},
+                                {"name": "Muffin"},
+                                {"name": "Candy"},
+                                {"name": "Pita"},
+                                {"name": "Cookies"},
+                                {"name": "Cake"},
+                                {"name": "Bread"},
+                                {"name": "White bread"},
+                                {"name": "Black Bread"},
+                                {"name": "Chocolate"}
+                                ]
+                   },
+                   {
+                   "name": "Milk",
+                   "clr": "#f0f0ff",
+                   "intsort": 3,
+                   "products": [
+                                {"name": "Butter"},
+                                {"name": "Cheese"},
+                                {"name": "Cheese"},
+                                {"name": "Sour"},
+                                {"name": "Milk"},
+                                {"name": "Cream"},
+                                {"name": "Kefir"},
+                                {"name": "Yogurt"},
+                                {"name": "curd"},
+                                {"name": "Eggs"}
+                                ]
+                   },
+                   {
+                   "name": "Grocery",
+                   "clr": "#ffa12d",
+                   "intsort": 4,
+                   "products": [
+                                {"name": "Figure"},
+                                {"name": "Buckwheat"},
+                                {"name": "Munk"},
+                                {"name": "Pshenko"},
+                                {"name": "Hercules"},
+                                {"name": "Oatmeal"},
+                                {"name": "Muesli"},
+                                {"name": "Peas"},
+                                {"name": "Barley"},
+                                {"name": "Pasta"},
+                                {"name": "Spaghetti"}
+                                ]
+                   },
+                   {
+                   "name": "Meat-Fish",
+                   "clr": "#ff0000",
+                   "intsort": 5,
+                   "products": [
+                                {"name": "Bacon"},
+                                {"name": "Ham"},
+                                {"name": "Beef"},
+                                {"name": "Caviar"},
+                                {"name": "turkey"},
+                                {"name": "Sausage"},
+                                {"name": "Crab sticks"},
+                                {"name": "Prawns"},
+                                {"name": "Chicken"},
+                                {"name": "Meat"},
+                                {"name": "Dumplings"},
+                                {"name": "Fish"},
+                                {"name": "Pork"},
+                                {"name": "Herring"},
+                                {"name": "Sausages"},
+                                {"name": "Stuffing"},
+                                {"name": "Pate"}
+                                ]
+                   },
+                   {
+                   "name": "Spices",
+                   "clr": "#de3f7d",
+                   "intsort": 6,
+                   "products": [
+                                {"name": "Ground pepper"},
+                                {"name": "Salt"},
+                                {"name": "Sugar"},
+                                {"name": "Laurel"},
+                                {"name": "Ketchup"},
+                                {"name": "Mayonnaise"},
+                                {"name": "Tomato paste"},
+                                {"name": "Oil rastiteltnoe"},
+                                {"name": "Yeast"},
+                                {"name": "Vanilla"},
+                                {"name": "Rusk bread"},
+                                {"name": "Sauce"}
+                                ]
+                   },
+                   {
+                   "name": "Fruits-Vegetables",
+                   "clr": "#00ff00",
+                   "intsort": 7,
+                   "products": [
+                                {"name": "Avocado"},
+                                {"name": "Pineapple"},
+                                {"name": "Oranges"},
+                                {"name": "Watermelon"},
+                                {"name": "Eggplant"},
+                                {"name": "Bananas"},
+                                {"name": "Grapes"},
+                                {"name": "Mushrooms"},
+                                {"name": "Pears"},
+                                {"name": "Melon"},
+                                {"name": "green"},
+                                {"name": "Ginger"},
+                                {"name": "Squash"},
+                                {"name": "Cabbage"},
+                                {"name": "Potatoes"},
+                                {"name": "Cilantro"},
+                                {"name": "Lemon"},
+                                {"name": "Bow"},
+                                {"name": "Carrot"},
+                                {"name": "Nectarines"},
+                                {"name": "Vegetables"},
+                                {"name": "Cucumber"},
+                                {"name": "Pepper"},
+                                {"name": "Peaches"},
+                                {"name": "Petrushka"},
+                                {"name": "Tomatoes"},
+                                {"name": "Radish"},
+                                {"name": "Salad"},
+                                {"name": "Beet"},
+                                {"name": "Plums"},
+                                {"name": "Dill"},
+                                {"name": "Fruits"},
+                                {"name": "Fuck"},
+                                {"name": "Persimmon"},
+                                {"name": "Garlic"},
+                                {"name": "Mushrooms"},
+                                {"name": "Apples"},
+                                {"name": "Berries"}
+                                ]
+                   },
+                   {
+                   "name": "Miscellaneous",
+                   "clr": "#660000",
+                   "intsort": 8,
+                   "products": [
+                                {"name": "Batteries"},
+                                {"name": "Paper towels"},
+                                {"name": "Cotton pads"},
+                                {"name": "Cotton buds"},
+                                {"name": "Wet Wipes"},
+                                {"name": "Shower Gel"},
+                                {"name": "Sponges"},
+                                {"name": "deodorant"},
+                                {"name": "Liquid Soap"},
+                                {"name": "Toothpaste"},
+                                {"name": "Toothbrush"},
+                                {"name": "Toothpicks"},
+                                {"name": "Light Bulb"},
+                                {"name": "Soap"},
+                                {"name": "Trash bags"},
+                                {"name": "Pampers"},
+                                {"name": "Gloves"},
+                                {"name": "Seals"},
+                                {"name": "Napkins"},
+                                {"name": "Washing powder"},
+                                {"name": "Toilet paper"},
+                                {"name": "Foil"},
+                                {"name": "Shampoo"}
+                                ]
+                   },
+                   {
+                   "name": "Uncategorized",
+                   "clr": "#cccccc",
+                   "intsort": 99,
+                   "products": []
+                   }
+                   ],
+    "shoplists": [
+                  {
+                  "name": "My first list",
+                  "intsort": 1,
+                  "commodities": [
+                                  {"name": "Milk"},
+                                  {"name": "Cucumber", "amount": 2},
+                                  {"name": "Herring"},
+                                  {"name": "Toilet paper", "amount": 10}
+                                  ]
+                  }
+                  ]
+}

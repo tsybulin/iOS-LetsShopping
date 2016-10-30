@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  goshopping
+
+  Created by Pavel Tsybulin on 22.04.15.
+  Copyright (c) 2015 Pavel Tsybulin. All rights reserved.
+*/
+"Select an action" = "Выберите действие" ;
+"Cancel" = "Отменить" ;
+"Edit" = "Редактировать" ;
+"Categories" = "Категории" ;
+"Products" = "Продукты" ;
+"New list" = "Новый список" ;
+"Delete" = "Удалить" ;
+"New" = "Новый" ;
+"Delete all" = "Удалить все" ;
+"Complete all" = "Купить все" ;
+"Cancel all" = "Отменить все" ;
+"Added" = "Добавлен" ;
+"New product" = "Новый продукт" ;
+"Copy" = "Скопировать" ;
+"Widget" = "Виджет" ;
+"Use the results?" = "Использовать результаты?" ;
+"Send to..." = "Отправить в..." ;
+"As text..." = "Как текст..." ;
+"About" = "О программе" ;
+"Version" = "Версия" ;
+"Preferences" = "Настройки" ;
+"Import" = "Импорт" ;
+"Error" = "Ошибка" ;
+"Success" = "Успех" ;
+"The shopping list has been loaded successfully" = "Список покупок был успешно загружен" ;
+"As binary..." = "Как вложение..." ;

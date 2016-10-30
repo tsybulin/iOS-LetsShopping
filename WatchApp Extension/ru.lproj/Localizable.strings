@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  goshopping
+
+  Created by Pavel Tsybulin on 17.05.15.
+  Copyright (c) 2015 Pavel Tsybulin. All rights reserved.
+*/
+"pcs" = "ед" ;
+"Please share list" = "Список не выбран" ;
+"Let's Shopping!" = "Айда в шопу!" ;
