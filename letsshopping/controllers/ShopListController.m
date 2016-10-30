@@ -174,11 +174,6 @@
     }] ;
     [alertActions addAction:productsAction] ;
     
-    UIAlertAction* settingsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Preferences", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:^(BOOL success) {}] ;
-    }] ;
-    [alertActions addAction:settingsAction] ;
-
     UIAlertAction* aboutAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"About", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         [self performSegueWithIdentifier:@"about" sender:self] ;
     }] ;

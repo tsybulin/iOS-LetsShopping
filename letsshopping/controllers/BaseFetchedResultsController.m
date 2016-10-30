@@ -59,11 +59,14 @@
         case NSFetchedResultsChangeInsert:
             [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade] ;
             break ;
+        
         case NSFetchedResultsChangeDelete:
             [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade] ;
             break;
+        
         case NSFetchedResultsChangeUpdate:
             [self configureCell:[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath] ;
+            [self configureCell:[self.tableView cellForRowAtIndexPath:newIndexPath] atIndexPath:newIndexPath] ;
             break ;
             
         case NSFetchedResultsChangeMove:
@@ -93,30 +96,32 @@
 }
 
 - (void)moveItemFromIndexPath:(NSIndexPath *)sourceIndexPath toIndexpath:(NSIndexPath *)destinationIndexPath {
-    NSMutableArray *before = [NSMutableArray array] ;
+    NSMutableArray *arr = [NSMutableArray array] ;
     NSInteger first = sourceIndexPath.row < destinationIndexPath.row ? sourceIndexPath.row : destinationIndexPath.row ;
     NSInteger last = destinationIndexPath.row > sourceIndexPath.row ? destinationIndexPath.row : sourceIndexPath.row ;
     
     for (NSInteger i = first ; i <= last; i++) {
-        [before addObject:[listController objectAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]]] ;
+        [arr addObject:[listController objectAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]]] ;
     }
     
-    NSUInteger intsort = ((NSNumber *)[[before firstObject] valueForKey:@"intsort"]).unsignedIntegerValue ;
+    NSUInteger intsort = ((NSNumber *)[[arr firstObject] valueForKey:@"intsort"]).unsignedIntegerValue ;
     
     if (sourceIndexPath.row < destinationIndexPath.row) {
-        NSObject *item = [before firstObject] ;
-        [before removeObjectAtIndex:0] ;
-        [before addObject:item] ;
+        NSObject *item = [arr firstObject] ;
+        [arr removeObjectAtIndex:0] ;
+        [arr addObject:item] ;
     } else {
-        NSObject *item = [before lastObject] ;
-        [before removeLastObject] ;
-        [before insertObject:item atIndex:0] ;
+        NSObject *item = [arr lastObject] ;
+        [arr removeLastObject] ;
+        [arr insertObject:item atIndex:0] ;
     }
-    
-    for (NSObject *item in before) {
+
+    for (NSObject *item in arr) {
         [item setValue:[NSNumber numberWithUnsignedInteger:intsort] forKey:@"intsort"] ;
         intsort++ ;
     }
+
+    [listController performFetch:nil] ;
 }
 
 @end
