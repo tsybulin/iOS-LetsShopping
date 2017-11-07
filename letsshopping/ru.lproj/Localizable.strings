@@ -6,10 +6,8 @@
   Copyright (c) 2015 Pavel Tsybulin. All rights reserved.
 */
 "Select an action" = "Выберите действие" ;
-"Cancel" = "Отменить" ;
+"cancel" = "Отменить" ;
 "Edit" = "Редактировать" ;
-"Categories" = "Категории" ;
-"Products" = "Продукты" ;
 "New list" = "Новый список" ;
 "Delete" = "Удалить" ;
 "New" = "Новый" ;
@@ -31,3 +29,16 @@
 "Success" = "Успех" ;
 "The shopping list has been loaded successfully" = "Список покупок был успешно загружен" ;
 "As binary..." = "Как вложение..." ;
+
+"shoplists" = "Списки" ;
+"about" = "О программе" ;
+"appname" = "Айда в шопу!" ;
+"sendmail" = "Послать письмо" ;
+"products" = "Продукты" ;
+"product" = "Продукт" ;
+"categories" = "Категории" ;
+"category" = "Категория" ;
+"name" = "Название" ;
+"color" = "Цвет" ;
+"save" = "Сохранить" ;
+"amount" = "Кол-во" ;

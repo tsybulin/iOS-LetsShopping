@@ -15,6 +15,7 @@
 #import "ALToastView.h"
 #import "ShopcategoryListController.h"
 #import "ProductController.h"
+#import "NSObject+Localizable.h"
 
 NSString * const C_AMOUNT_SEPARATOR = @" • " ;
 
@@ -27,7 +28,9 @@ NSString * const C_AMOUNT_SEPARATOR = @" • " ;
 @implementation ProductListController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    [super viewDidLoad] ;
+    [self localize] ;
+    [self.accessoryView localize] ;
 
     cellIdentifier = @"ProductCell" ;
     

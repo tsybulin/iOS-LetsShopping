@@ -188,7 +188,7 @@
         }] ;
         [alertSendTo addAction:binaryAction] ;
 
-        UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+        UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
             //
         }] ;
         [alertSendTo addAction:cancelAction] ;
@@ -200,7 +200,7 @@
     [alertActions addAction:sendToAction] ;
 
     
-    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
     }] ;
     [alertActions addAction:cancelAction] ;
 
@@ -269,7 +269,7 @@
     }] ;
     [alert addAction:defaultAction] ;
     
-    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
         [[NCWidgetController widgetController] setHasContent:NO forWidgetWithBundleIdentifier:@"com.tsybulin.letsshopping.LetsShoppingWidget"] ;
     }] ;
     [alert addAction:cancelAction] ;

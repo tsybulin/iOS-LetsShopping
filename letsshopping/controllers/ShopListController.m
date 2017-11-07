@@ -15,6 +15,7 @@
 #import "ShoplistViewController.h"
 #import "ShopcategoryListController.h"
 #import "ProductListController.h"
+#import "NSObject+Localizable.h"
 
 @interface ShopListController () {
 }
@@ -25,6 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad] ;
+    [self localize] ;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onRightNavButtonClick:)] ;
 
@@ -164,12 +166,12 @@
     }] ;
     [alertActions addAction:editAction] ;
 
-    UIAlertAction* categoriesAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Categories", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+    UIAlertAction* categoriesAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"categories", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         [self performSegueWithIdentifier:@"shopcategories" sender:self] ;
     }] ;
     [alertActions addAction:categoriesAction] ;
     
-    UIAlertAction* productsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Products", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+    UIAlertAction* productsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"products", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         [self performSegueWithIdentifier:@"products" sender:self] ;
     }] ;
     [alertActions addAction:productsAction] ;
@@ -179,7 +181,7 @@
     }] ;
     [alertActions addAction:aboutAction] ;
     
-    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
     }] ;
     [alertActions addAction:cancelAction] ;
     

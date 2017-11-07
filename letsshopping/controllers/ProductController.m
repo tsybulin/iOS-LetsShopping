@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "StorageHelper.h"
 #import "ShopCategory.h"
+#import "NSObject+Localizable.h"
 
 @interface ProductController () {
     NSFetchedResultsController *listController ;
@@ -21,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad] ;
+    [self localize] ;
     
     listController = [[StorageHelper sharedHelper] shopcategoryFetchController] ;
     [listController performFetch:nil] ;

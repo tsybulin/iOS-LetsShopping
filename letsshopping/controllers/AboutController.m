@@ -8,6 +8,7 @@
 
 #import "AboutController.h"
 #import <MessageUI/MessageUI.h>
+#import "NSObject+Localizable.h"
 
 @interface AboutController ()  <MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *lblVersion;
@@ -18,7 +19,8 @@
 @implementation AboutController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    [super viewDidLoad] ;
+    [self localize] ;
     
     self.lblVersion.text = [NSString stringWithFormat:@"%@ %@ (%@)", NSLocalizedString(@"Version", nil), [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"], [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]] ;
     

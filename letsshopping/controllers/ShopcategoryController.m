@@ -7,6 +7,7 @@
 //
 
 #import "ShopcategoryController.h"
+#import "NSObject+Localizable.h"
 
 #define hsb(h,s,b) [UIColor colorWithHue:h/360.0f saturation:s/100.0f brightness:b/100.0f alpha:1.0]
 
@@ -21,7 +22,8 @@
 @implementation ShopcategoryController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    [super viewDidLoad] ;
+    [self localize] ;
     
     colors = @[
         hsb(0, 0, 17), hsb(0, 0, 15),

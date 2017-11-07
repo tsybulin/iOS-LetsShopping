@@ -10,6 +10,7 @@
 #import "StorageHelper.h"
 #import "ShopCategory.h"
 #import "ShopcategoryController.h"
+#import "NSObject+Localizable.h"
 
 @interface ShopcategoryListController ()
 
@@ -18,7 +19,8 @@
 @implementation ShopcategoryListController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    [super viewDidLoad] ;
+    [self localize] ;
 
     cellIdentifier = @"ShopcategoryCell" ;
     
