@@ -19,6 +19,7 @@
 #import "ImportHelper.h"
 #import "BinaryExportProvider.h"
 #import "TextExportProvider.h"
+#import "NSObject+Localizable.h"
 
 @interface ShoplistViewController () {
     Shoplist *shoplist ;
@@ -30,6 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self localize] ;
 
     cellIdentifier = @"CommodityCell" ;
     
@@ -104,7 +106,7 @@
     ((UIButton *)[cell viewWithTag:3]).selected = commodity.shopped ;
     
     ((UILabel *)[cell viewWithTag:4]).text = commodity.amount.stringValue ;
-    
+    ((UILabel *)[cell viewWithTag:5]).text = [NSLocalizedString(@"amount", @"") stringByAppendingString:@":"] ;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
