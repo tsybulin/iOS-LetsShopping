@@ -17,8 +17,7 @@
 #import "ProductListController.h"
 #import "NSObject+Localizable.h"
 
-@interface ShopListController () {
-}
+@interface ShopListController () <UIViewControllerPreviewingDelegate>
 
 @end
 
@@ -29,6 +28,10 @@
     [self localize] ;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onRightNavButtonClick:)] ;
+
+    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+        [self registerForPreviewingWithDelegate:self sourceView:self.view] ;
+    }
 
     cellIdentifier = @"ShoplistCell" ;
 
@@ -199,6 +202,28 @@
 
 - (void)copyListAtPath:(NSIndexPath *)indexPath {
     [[StorageHelper sharedHelper] copyShoplist:[listController objectAtIndexPath:indexPath] withIntsort: [self newIntSort]] ;
+}
+
+#pragma mark <UIViewControllerPreviewingDelegate>
+
+- (nullable UIViewController *)previewingContext:(id <UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location  {
+    CGPoint cellPostion = [self.tableView convertPoint:location fromView:self.view] ;
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:cellPostion] ;
+    
+    if (!indexPath) {
+        return nil ;
+    }
+
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil] ; // ShoplistViewController
+    ShoplistViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"ShoplistViewController"] ;
+    controller.shoplistID = ((Shoplist *)[listController objectAtIndexPath:indexPath]).objectID ;
+    UITableViewCell *tableCell = [self.tableView cellForRowAtIndexPath:indexPath] ;
+    previewingContext.sourceRect = [self.view convertRect:tableCell.frame fromView:self.tableView] ;
+    return controller ;
+}
+
+- (void)previewingContext:(id <UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+    [self.navigationController showViewController:viewControllerToCommit sender:nil] ;
 }
 
 @end

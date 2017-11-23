@@ -144,7 +144,7 @@
         <!--Shoplist View Controller-->
         <scene sceneID="9mM-by-Dyh">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ghQ-ys-kAC" customClass="ShoplistViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShoplistViewController" automaticallyAdjustsScrollViewInsets="NO" id="ghQ-ys-kAC" customClass="ShoplistViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2O6-Zo-KDb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -789,7 +789,7 @@
         <image name="unshopped" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="K3P-7G-M2H"/>
+        <segue reference="EDt-6S-Uyl"/>
         <segue reference="I9c-1M-Cca"/>
     </inferredMetricsTieBreakers>
 </document>

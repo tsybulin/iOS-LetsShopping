@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C4171C141FB1C75D0060CA24 /* UILocalizable+Localizable.m in Sources */ = {isa = PBXBuildFile; fileRef = C4171C131FB1C75C0060CA24 /* UILocalizable+Localizable.m */; };
+		C44642721FC6DB580090315B /* ComplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44642711FC6DB580090315B /* ComplicationController.m */; };
 		C46F53321DC56FFE0068E28D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C46F53301DC56FFE0068E28D /* Interface.storyboard */; };
 		C46F53341DC56FFE0068E28D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C46F53331DC56FFE0068E28D /* Assets.xcassets */; };
 		C46F533B1DC56FFF0068E28D /* WatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C46F533A1DC56FFF0068E28D /* WatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -121,6 +122,8 @@
 /* Begin PBXFileReference section */
 		C4171C121FB1C75C0060CA24 /* NSObject+Localizable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Localizable.h"; sourceTree = "<group>"; };
 		C4171C131FB1C75C0060CA24 /* UILocalizable+Localizable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILocalizable+Localizable.m"; sourceTree = "<group>"; };
+		C44642701FC6DB580090315B /* ComplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComplicationController.h; sourceTree = "<group>"; };
+		C44642711FC6DB580090315B /* ComplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComplicationController.m; sourceTree = "<group>"; };
 		C46F532E1DC56FFE0068E28D /* WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46F53311DC56FFE0068E28D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		C46F53331DC56FFE0068E28D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -250,6 +253,8 @@
 				C46F53401DC56FFF0068E28D /* InterfaceController.m */,
 				C46F53421DC56FFF0068E28D /* ExtensionDelegate.h */,
 				C46F53431DC56FFF0068E28D /* ExtensionDelegate.m */,
+				C44642701FC6DB580090315B /* ComplicationController.h */,
+				C44642711FC6DB580090315B /* ComplicationController.m */,
 				C46F53451DC56FFF0068E28D /* Assets.xcassets */,
 				C46F53471DC56FFF0068E28D /* Info.plist */,
 				C46F535C1DC572320068E28D /* InfoPlist.strings */,
@@ -594,6 +599,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C44642721FC6DB580090315B /* ComplicationController.m in Sources */,
 				C46F53441DC56FFF0068E28D /* ExtensionDelegate.m in Sources */,
 				C46F53411DC56FFF0068E28D /* InterfaceController.m in Sources */,
 			);

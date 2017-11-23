@@ -78,6 +78,11 @@
         [defaults synchronize] ;
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"SHOPLIST_CHANGED" object:nil] ;
+
+        CLKComplicationServer *complicationServer = [CLKComplicationServer sharedInstance] ;
+        for (CLKComplication *complication in complicationServer.activeComplications) {
+            [complicationServer reloadTimelineForComplication:complication] ;
+        }
     }
 }
 

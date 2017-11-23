@@ -120,9 +120,6 @@
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
     [self moveItemFromIndexPath:sourceIndexPath toIndexpath:destinationIndexPath] ;
-
-//    [[StorageHelper sharedHelper] commit] ;
-//    [self.tableView reloadData] ;
 }
 
 

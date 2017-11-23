@@ -135,6 +135,11 @@
     
     [defaults synchronize] ;
     
+    CLKComplicationServer *complicationServer = [CLKComplicationServer sharedInstance] ;
+    for (CLKComplication *complication in complicationServer.activeComplications) {
+        [complicationServer reloadTimelineForComplication:complication] ;
+    }
+    
     return YES ;
 }
 
