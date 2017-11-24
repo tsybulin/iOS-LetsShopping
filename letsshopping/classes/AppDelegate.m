@@ -162,4 +162,7 @@
 - (void)sessionDidBecomeInactive:(WCSession *)session {
 }
 
+#pragma mark User Activity Continuation
+
+
 @end

@@ -20,6 +20,7 @@
 #import "BinaryExportProvider.h"
 #import "TextExportProvider.h"
 #import "NSObject+Localizable.h"
+#import "AppDelegate+UIShortcutItems.h"
 
 @interface ShoplistViewController () {
     Shoplist *shoplist ;
@@ -36,6 +37,9 @@
     cellIdentifier = @"CommodityCell" ;
     
     shoplist = [[StorageHelper sharedHelper] shoplistByID:self.shoplistID] ;
+    
+    UIApplication *application = [UIApplication sharedApplication] ;
+    [((AppDelegate *) application.delegate) updateShortcutItemsForApplication:application shopList:shoplist] ;
 
     ((UITextField *)self.navigationItem.titleView).text = shoplist.name ;
     

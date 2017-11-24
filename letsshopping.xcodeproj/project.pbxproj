@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C4171C141FB1C75D0060CA24 /* UILocalizable+Localizable.m in Sources */ = {isa = PBXBuildFile; fileRef = C4171C131FB1C75C0060CA24 /* UILocalizable+Localizable.m */; };
 		C44642721FC6DB580090315B /* ComplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44642711FC6DB580090315B /* ComplicationController.m */; };
+		C46E29941FC805A800476F60 /* AppDelegate+UIShortcutItems.m in Sources */ = {isa = PBXBuildFile; fileRef = C46E29931FC805A800476F60 /* AppDelegate+UIShortcutItems.m */; };
 		C46F53321DC56FFE0068E28D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C46F53301DC56FFE0068E28D /* Interface.storyboard */; };
 		C46F53341DC56FFE0068E28D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C46F53331DC56FFE0068E28D /* Assets.xcassets */; };
 		C46F533B1DC56FFF0068E28D /* WatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C46F533A1DC56FFF0068E28D /* WatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -124,6 +125,8 @@
 		C4171C131FB1C75C0060CA24 /* UILocalizable+Localizable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILocalizable+Localizable.m"; sourceTree = "<group>"; };
 		C44642701FC6DB580090315B /* ComplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComplicationController.h; sourceTree = "<group>"; };
 		C44642711FC6DB580090315B /* ComplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComplicationController.m; sourceTree = "<group>"; };
+		C46E29921FC805A800476F60 /* AppDelegate+UIShortcutItems.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+UIShortcutItems.h"; sourceTree = "<group>"; };
+		C46E29931FC805A800476F60 /* AppDelegate+UIShortcutItems.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+UIShortcutItems.m"; sourceTree = "<group>"; };
 		C46F532E1DC56FFE0068E28D /* WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46F53311DC56FFE0068E28D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		C46F53331DC56FFE0068E28D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -374,6 +377,8 @@
 				C4A3C5C01DC54652001361FC /* TextExportProvider.m */,
 				C4171C121FB1C75C0060CA24 /* NSObject+Localizable.h */,
 				C4171C131FB1C75C0060CA24 /* UILocalizable+Localizable.m */,
+				C46E29921FC805A800476F60 /* AppDelegate+UIShortcutItems.h */,
+				C46E29931FC805A800476F60 /* AppDelegate+UIShortcutItems.m */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -633,6 +638,7 @@
 				C4A3C5C11DC54652001361FC /* BinaryExportProvider.m in Sources */,
 				C4A3C5E01DC54783001361FC /* ProductController.m in Sources */,
 				C4A3C5E31DC54783001361FC /* ShopcategoryListController.m in Sources */,
+				C46E29941FC805A800476F60 /* AppDelegate+UIShortcutItems.m in Sources */,
 				C4171C141FB1C75D0060CA24 /* UILocalizable+Localizable.m in Sources */,
 				C4A3C5AE1DC542C0001361FC /* Product.m in Sources */,
 				C4A3C5C31DC54652001361FC /* LogHelper.m in Sources */,
