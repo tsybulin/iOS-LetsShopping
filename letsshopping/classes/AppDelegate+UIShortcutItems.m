@@ -30,7 +30,7 @@
     }
 
     UIApplicationShortcutItem *shortcutItem = [[UIApplicationShortcutItem alloc]
-                                               initWithType:@"com.tsybulin.letsshopping.shoplist"
+                                               initWithType:@"com.ptsybulin.letsshopping.shoplist"
                                                localizedTitle:shopList.name localizedSubtitle:productNames
                                                icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeTaskCompleted]
                                                userInfo:@{@"shoplistID" : [[shopList.objectID URIRepresentation] absoluteString]}
@@ -41,7 +41,7 @@
 }
 
 - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void(^)(BOOL succeeded))completionHandler {
-    if ([@"com.tsybulin.letsshopping.shoplist" isEqualToString:shortcutItem.type]) {
+    if ([@"com.ptsybulin.letsshopping.shoplist" isEqualToString:shortcutItem.type]) {
 
         NSString *shoplistId = (NSString *)[shortcutItem.userInfo objectForKey:@"shoplistID"] ;
         NSManagedObjectID *shoplistID = [self.persistentContainer.viewContext.persistentStoreCoordinator managedObjectIDForURIRepresentation:[NSURL URLWithString:shoplistId]] ;

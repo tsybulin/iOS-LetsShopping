@@ -14,6 +14,7 @@
 #import "ShopCategory.h"
 #import "ProductListController.h"
 #import <NotificationCenter/NotificationCenter.h>
+#import <UserNotifications/UserNotifications.h>
 #import "SharedCommodity.h"
 #import <WatchConnectivity/WatchConnectivity.h>
 #import "ImportHelper.h"
@@ -24,7 +25,9 @@
 
 @interface ShoplistViewController () {
     Shoplist *shoplist ;
+    BOOL dataShared ;
 }
+@property (weak, nonatomic) IBOutlet UIImageView *ivCounter ;
 
 @end
 
@@ -33,6 +36,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self localize] ;
+    
+    self.ivCounter.hidden = YES ;
+    NSMutableArray *cntImageArray = [NSMutableArray arrayWithCapacity:5] ;
+    for (int i = 5; i > 0; i--) {
+        UIImage *cntImage = [UIImage imageNamed:[NSString stringWithFormat:@"%d", i]] ;
+        [cntImageArray addObject:cntImage] ;
+    }
+    self.ivCounter.animationImages = cntImageArray ;
+    self.ivCounter.animationDuration = 5.0f ;
+    self.ivCounter.animationRepeatCount = 0 ;
 
     cellIdentifier = @"CommodityCell" ;
     
@@ -50,6 +63,10 @@
 
     listController = [[StorageHelper sharedHelper] commodityFetchController:shoplist] ;
     listController.delegate = self ;
+    
+    dataShared = NO ;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(autoimport) name:UIApplicationDidBecomeActiveNotification object:nil] ;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,7 +75,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated] ;
-    
     UIColor *color = [UIColor colorWithRed:65.0/255.0 green:187.0/255.0 blue:0.0 alpha:1.0f] ;
     self.navigationController.navigationBar.barTintColor = color ;
     
@@ -74,9 +90,13 @@
     }
     
     [[StorageHelper sharedHelper] commit] ;
-    [[NCWidgetController widgetController] setHasContent:NO forWidgetWithBundleIdentifier:@"com.tsybulin.goshopping.LetsShopWidget"] ;
+    [[NCWidgetController widgetController] setHasContent:NO forWidgetWithBundleIdentifier:@"com.ptsybulin.goshopping.LetsShopWidget"] ;
     
     [super viewWillDisappear:animated] ;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self] ;
 }
 
 #pragma mark - Navigation
@@ -137,7 +157,6 @@
     alertActions.popoverPresentationController.sourceView = self.view ;
     alertActions.popoverPresentationController.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0) ;
 
-
     UIAlertAction* deleteAllAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Delete all", nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
         [[StorageHelper sharedHelper] clearShoplist:shoplist] ;
     }] ;
@@ -172,7 +191,13 @@
             [self shareWithWidget] ;
         }] ;
         [alertSendTo addAction:widgetAction] ;
-        
+
+        UIAlertAction* notificationAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Notification", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            [[StorageHelper sharedHelper] commit] ;
+            [self shareWithNotification] ;
+        }] ;
+        [alertSendTo addAction:notificationAction] ;
+
         if ([WCSession isSupported]) {
             WCSession *wcsession = [WCSession defaultSession] ;
             if ([wcsession isPaired] && [wcsession isWatchAppInstalled]) {
@@ -205,7 +230,6 @@
     }] ;
     [alertActions addAction:sendToAction] ;
 
-    
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
     }] ;
     [alertActions addAction:cancelAction] ;
@@ -217,8 +241,8 @@
     [self performSegueWithIdentifier:@"addcommodity" sender:self] ;
 }
 
-- (void)dataFromWidget {
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName: @"group.com.tsybulin.letsshopping"] ;
+- (void)importGroupData {
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName: @"group.com.ptsybulin.letsshopping"] ;
     NSDictionary<NSString *, id> *dict = [sharedDefaults objectForKey:@"shoplist"] ;
     NSArray *sharedArray = [dict objectForKey:@"commodities"] ;
     
@@ -226,6 +250,10 @@
         return ;
     }
     
+    if (![[[shoplist.objectID URIRepresentation] absoluteString] isEqualToString:[dict objectForKey:@"shoplistID"]]) {
+        return ;
+    }
+
     if (sharedArray.count < 1) {
         return ;
     }
@@ -247,13 +275,14 @@
     [self.tableView endUpdates] ;
     [listController performFetch:nil] ;
     [self.tableView reloadData] ;
+    dataShared = NO ;
 }
 
-- (void)shareWithWidget {
+- (void)shareGroupData {
     NSDictionary<NSString *, id> *dict = [[ImportHelper sharedHelper] dictionaryFromList:shoplist] ;
     
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName: @"group.com.tsybulin.letsshopping"] ;
-
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName: @"group.com.ptsybulin.letsshopping"] ;
+    
     NSArray<NSString *> *allKeys = [[sharedDefaults dictionaryRepresentation] allKeys] ;
     for (NSString *key in allKeys) {
         [sharedDefaults removeObjectForKey:key] ;
@@ -261,8 +290,13 @@
     
     [sharedDefaults setObject:dict forKey:@"shoplist"] ;
     [sharedDefaults synchronize] ;
+    dataShared = YES ;
+}
+
+- (void)shareWithWidget {
+    [self shareGroupData] ;
     
-    [[NCWidgetController widgetController] setHasContent:YES forWidgetWithBundleIdentifier:@"com.tsybulin.letsshopping.LetsShoppingWidget"] ;
+    [[NCWidgetController widgetController] setHasContent:YES forWidgetWithBundleIdentifier:@"com.ptsybulin.letsshopping.LetsShoppingWidget"] ;
     
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Use the results?", nil) message:nil preferredStyle:UIAlertControllerStyleActionSheet] ;
 
@@ -270,17 +304,55 @@
     alert.popoverPresentationController.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0) ;
     
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        [[NCWidgetController widgetController] setHasContent:NO forWidgetWithBundleIdentifier:@"com.tsybulin.letsshopping.LetsShoppingWidget"] ;
-        [self dataFromWidget] ;
+        [[NCWidgetController widgetController] setHasContent:NO forWidgetWithBundleIdentifier:@"com.ptsybulin.letsshopping.LetsShoppingWidget"] ;
     }] ;
     [alert addAction:defaultAction] ;
     
-    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
-        [[NCWidgetController widgetController] setHasContent:NO forWidgetWithBundleIdentifier:@"com.tsybulin.letsshopping.LetsShoppingWidget"] ;
-    }] ;
-    [alert addAction:cancelAction] ;
-    
     [self presentViewController:alert animated:YES completion:nil] ;
+}
+
+- (void)stopCounter {
+    [self.ivCounter stopAnimating] ;
+    self.ivCounter.hidden = YES ;
+}
+
+- (void)showNotification:(NSString *)title timeout:(NSTimeInterval)timeout {
+    UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init] ;
+    content.body = NSLocalizedString(@"Expand to interact", nil)  ;
+    content.title = title ;
+    content.categoryIdentifier = @"ltsNotification" ;
+    UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:timeout repeats:NO] ;
+    UNNotificationRequest *request =  [UNNotificationRequest requestWithIdentifier:@"FiveSecond" content:content trigger:trigger] ;
+    [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+        
+    }] ;
+}
+
+- (void)showNotification {
+    [self showNotification:shoplist.name timeout:5.0f] ;
+    [self performSelector:@selector(stopCounter) withObject:nil afterDelay:5] ;
+    self.ivCounter.hidden = NO ;
+    [self.ivCounter startAnimating] ;
+}
+
+- (void)shareWithNotification {
+    [self shareGroupData] ;
+    
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter] ;
+    [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"AppDelegate.requestAuthorizationWithOptions error %@", error) ;
+            return ;
+        } else {
+            if (!granted) {
+                NSLog(@"AppDelegate.requestAuthorizationWithOptions not granted") ;
+                return ;
+            }
+            dispatch_async(dispatch_get_main_queue(), ^ {
+                [self showNotification] ;
+            }) ;
+        }
+    }] ;
 }
 
 - (void)shareWithWatch {
@@ -327,6 +399,12 @@
     dispatch_async(dispatch_get_main_queue(), ^ {
         [self presentViewController:activityViewController animated:YES completion:nil] ;
     }) ;
+}
+
+- (void)autoimport {
+    if (dataShared) {
+        [self importGroupData] ;
+    }
 }
 
 @end

@@ -3,6 +3,9 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[NotificationViewController mediaPlayPauseButtonFrame]:NotificationViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[BaseFetchedResultsController controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:]:BaseFetchedResultsController.m">
          <PersistentStrings>
             <PersistentString

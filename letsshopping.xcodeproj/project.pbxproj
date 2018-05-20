@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C4171C141FB1C75D0060CA24 /* UILocalizable+Localizable.m in Sources */ = {isa = PBXBuildFile; fileRef = C4171C131FB1C75C0060CA24 /* UILocalizable+Localizable.m */; };
 		C44642721FC6DB580090315B /* ComplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44642711FC6DB580090315B /* ComplicationController.m */; };
+		C44FE33320AEDB6800AC1600 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44FE33220AEDB6800AC1600 /* Images.xcassets */; };
+		C44FE33620AEF5E300AC1600 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C44FE33420AEF5CC00AC1600 /* Localizable.strings */; };
 		C46E29941FC805A800476F60 /* AppDelegate+UIShortcutItems.m in Sources */ = {isa = PBXBuildFile; fileRef = C46E29931FC805A800476F60 /* AppDelegate+UIShortcutItems.m */; };
 		C46F53321DC56FFE0068E28D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C46F53301DC56FFE0068E28D /* Interface.storyboard */; };
 		C46F53341DC56FFE0068E28D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C46F53331DC56FFE0068E28D /* Assets.xcassets */; };
@@ -20,6 +22,11 @@
 		C46F53551DC571B60068E28D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C46F53571DC571B60068E28D /* InfoPlist.strings */; };
 		C46F535A1DC572320068E28D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C46F535C1DC572320068E28D /* InfoPlist.strings */; };
 		C46F535F1DC575430068E28D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C46F53611DC575430068E28D /* Localizable.strings */; };
+		C47FC93920AE1D2F009E3AFD /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47FC93820AE1D2F009E3AFD /* UserNotifications.framework */; };
+		C47FC93B20AE1D2F009E3AFD /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47FC93A20AE1D2F009E3AFD /* UserNotificationsUI.framework */; };
+		C47FC93F20AE1D2F009E3AFD /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C47FC93E20AE1D2F009E3AFD /* NotificationViewController.m */; };
+		C47FC94220AE1D2F009E3AFD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C47FC94020AE1D2F009E3AFD /* MainInterface.storyboard */; };
+		C47FC94620AE1D2F009E3AFD /* NCExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C47FC93720AE1D2F009E3AFD /* NCExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C4876F2E1DC5506800877194 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4876F301DC5506800877194 /* InfoPlist.strings */; };
 		C4876F391DC5511B00877194 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4876F381DC5511B00877194 /* NotificationCenter.framework */; };
 		C4876F3D1DC5511B00877194 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4876F3C1DC5511B00877194 /* TodayViewController.m */; };
@@ -75,6 +82,13 @@
 			remoteGlobalIDString = C46F532D1DC56FFE0068E28D;
 			remoteInfo = WatchApp;
 		};
+		C47FC94420AE1D2F009E3AFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4A3C57A1DC53C2C001361FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C47FC93620AE1D2F009E3AFD;
+			remoteInfo = NCExtension;
+		};
 		C4876F421DC5511B00877194 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C4A3C57A1DC53C2C001361FC /* Project object */;
@@ -114,6 +128,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				C4876F441DC5511B00877194 /* LetsShoppingWidget.appex in Embed App Extensions */,
+				C47FC94620AE1D2F009E3AFD /* NCExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +140,9 @@
 		C4171C131FB1C75C0060CA24 /* UILocalizable+Localizable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILocalizable+Localizable.m"; sourceTree = "<group>"; };
 		C44642701FC6DB580090315B /* ComplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComplicationController.h; sourceTree = "<group>"; };
 		C44642711FC6DB580090315B /* ComplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComplicationController.m; sourceTree = "<group>"; };
+		C44FE33120AED08E00AC1600 /* NCExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NCExtension.entitlements; sourceTree = "<group>"; };
+		C44FE33220AEDB6800AC1600 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C44FE33520AEF5CC00AC1600 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C46E29921FC805A800476F60 /* AppDelegate+UIShortcutItems.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+UIShortcutItems.h"; sourceTree = "<group>"; };
 		C46E29931FC805A800476F60 /* AppDelegate+UIShortcutItems.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+UIShortcutItems.m"; sourceTree = "<group>"; };
 		C46F532E1DC56FFE0068E28D /* WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +159,13 @@
 		C46F53561DC571B60068E28D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C46F535B1DC572320068E28D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C46F53601DC575430068E28D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C47FC93720AE1D2F009E3AFD /* NCExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NCExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C47FC93820AE1D2F009E3AFD /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		C47FC93A20AE1D2F009E3AFD /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		C47FC93D20AE1D2F009E3AFD /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		C47FC93E20AE1D2F009E3AFD /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		C47FC94120AE1D2F009E3AFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		C47FC94320AE1D2F009E3AFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4876F2F1DC5506800877194 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C4876F311DC5507900877194 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C4876F361DC5511B00877194 /* LetsShoppingWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LetsShoppingWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +245,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C47FC93420AE1D2F009E3AFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C47FC93B20AE1D2F009E3AFD /* UserNotificationsUI.framework in Frameworks */,
+				C47FC93920AE1D2F009E3AFD /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4876F331DC5511B00877194 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -266,10 +300,26 @@
 			path = "WatchApp Extension";
 			sourceTree = "<group>";
 		};
+		C47FC93C20AE1D2F009E3AFD /* NCExtension */ = {
+			isa = PBXGroup;
+			children = (
+				C44FE33120AED08E00AC1600 /* NCExtension.entitlements */,
+				C47FC93D20AE1D2F009E3AFD /* NotificationViewController.h */,
+				C47FC93E20AE1D2F009E3AFD /* NotificationViewController.m */,
+				C47FC94020AE1D2F009E3AFD /* MainInterface.storyboard */,
+				C47FC94320AE1D2F009E3AFD /* Info.plist */,
+				C44FE33220AEDB6800AC1600 /* Images.xcassets */,
+				C44FE33420AEF5CC00AC1600 /* Localizable.strings */,
+			);
+			path = NCExtension;
+			sourceTree = "<group>";
+		};
 		C4876F371DC5511B00877194 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				C4876F381DC5511B00877194 /* NotificationCenter.framework */,
+				C47FC93820AE1D2F009E3AFD /* UserNotifications.framework */,
+				C47FC93A20AE1D2F009E3AFD /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -296,6 +346,7 @@
 				C4876F3A1DC5511B00877194 /* LetsShoppingWidget */,
 				C46F532F1DC56FFE0068E28D /* WatchApp */,
 				C46F533E1DC56FFF0068E28D /* WatchApp Extension */,
+				C47FC93C20AE1D2F009E3AFD /* NCExtension */,
 				C4876F371DC5511B00877194 /* Frameworks */,
 				C4A3C5831DC53C2C001361FC /* Products */,
 			);
@@ -308,6 +359,7 @@
 				C4876F361DC5511B00877194 /* LetsShoppingWidget.appex */,
 				C46F532E1DC56FFE0068E28D /* WatchApp.app */,
 				C46F533A1DC56FFF0068E28D /* WatchApp Extension.appex */,
+				C47FC93720AE1D2F009E3AFD /* NCExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -321,8 +373,8 @@
 				C4A3C5C61DC54754001361FC /* views */,
 				C4A3C5CD1DC54783001361FC /* controllers */,
 				C4A3C58E1DC53C2C001361FC /* Main.storyboard */,
-				C4A3C5941DC53C2C001361FC /* Assets.xcassets */,
 				C4A3C5961DC53C2C001361FC /* LaunchScreen.storyboard */,
+				C4A3C5941DC53C2C001361FC /* Assets.xcassets */,
 				C4A3C5991DC53C2C001361FC /* Info.plist */,
 				C4A3C5911DC53C2C001361FC /* letsshopping.xcdatamodeld */,
 				C4A3C5851DC53C2C001361FC /* Supporting Files */,
@@ -454,6 +506,23 @@
 			productReference = C46F533A1DC56FFF0068E28D /* WatchApp Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
+		C47FC93620AE1D2F009E3AFD /* NCExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C47FC94920AE1D2F009E3AFD /* Build configuration list for PBXNativeTarget "NCExtension" */;
+			buildPhases = (
+				C47FC93320AE1D2F009E3AFD /* Sources */,
+				C47FC93420AE1D2F009E3AFD /* Frameworks */,
+				C47FC93520AE1D2F009E3AFD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NCExtension;
+			productName = NCExtension;
+			productReference = C47FC93720AE1D2F009E3AFD /* NCExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		C4876F351DC5511B00877194 /* LetsShoppingWidget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4876F451DC5511B00877194 /* Build configuration list for PBXNativeTarget "LetsShoppingWidget" */;
@@ -486,6 +555,7 @@
 			dependencies = (
 				C4876F431DC5511B00877194 /* PBXTargetDependency */,
 				C46F53491DC56FFF0068E28D /* PBXTargetDependency */,
+				C47FC94520AE1D2F009E3AFD /* PBXTargetDependency */,
 			);
 			name = letsshopping;
 			productName = letsshopping;
@@ -498,7 +568,7 @@
 		C4A3C57A1DC53C2C001361FC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Pavel Tsybulin";
 				TargetAttributes = {
 					C46F532D1DC56FFE0068E28D = {
@@ -508,6 +578,15 @@
 					C46F53391DC56FFF0068E28D = {
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
+					};
+					C47FC93620AE1D2F009E3AFD = {
+						CreatedOnToolsVersion = 9.3.1;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					C4876F351DC5511B00877194 = {
 						CreatedOnToolsVersion = 8.1;
@@ -520,7 +599,6 @@
 					};
 					C4A3C5811DC53C2C001361FC = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = V3B8Z5MTV4;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -548,6 +626,7 @@
 				C4876F351DC5511B00877194 /* LetsShoppingWidget */,
 				C46F532D1DC56FFE0068E28D /* WatchApp */,
 				C46F53391DC56FFF0068E28D /* WatchApp Extension */,
+				C47FC93620AE1D2F009E3AFD /* NCExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -570,6 +649,16 @@
 				C46F53461DC56FFF0068E28D /* Assets.xcassets in Resources */,
 				C46F535F1DC575430068E28D /* Localizable.strings in Resources */,
 				C46F535A1DC572320068E28D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C47FC93520AE1D2F009E3AFD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C47FC94220AE1D2F009E3AFD /* MainInterface.storyboard in Resources */,
+				C44FE33620AEF5E300AC1600 /* Localizable.strings in Resources */,
+				C44FE33320AEDB6800AC1600 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,6 +696,14 @@
 				C44642721FC6DB580090315B /* ComplicationController.m in Sources */,
 				C46F53441DC56FFF0068E28D /* ExtensionDelegate.m in Sources */,
 				C46F53411DC56FFF0068E28D /* InterfaceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C47FC93320AE1D2F009E3AFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C47FC93F20AE1D2F009E3AFD /* NotificationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,6 +762,11 @@
 			target = C46F532D1DC56FFE0068E28D /* WatchApp */;
 			targetProxy = C46F53481DC56FFF0068E28D /* PBXContainerItemProxy */;
 		};
+		C47FC94520AE1D2F009E3AFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C47FC93620AE1D2F009E3AFD /* NCExtension */;
+			targetProxy = C47FC94420AE1D2F009E3AFD /* PBXContainerItemProxy */;
+		};
 		C4876F431DC5511B00877194 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C4876F351DC5511B00877194 /* LetsShoppingWidget */;
@@ -673,6 +775,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C44FE33420AEF5CC00AC1600 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C44FE33520AEF5CC00AC1600 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		C46F53301DC56FFE0068E28D /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -703,6 +813,14 @@
 				C46F53601DC575430068E28D /* ru */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		C47FC94020AE1D2F009E3AFD /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C47FC94120AE1D2F009E3AFD /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		C4876F301DC5506800877194 /* InfoPlist.strings */ = {
@@ -780,10 +898,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = V3B8Z5MTV4;
+				DEVELOPMENT_TEAM = 3RR39R6CUH;
 				IBSC_MODULE = WatchApp_Extension;
 				INFOPLIST_FILE = WatchApp/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tsybulin.letsshopping.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -796,10 +914,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = V3B8Z5MTV4;
+				DEVELOPMENT_TEAM = 3RR39R6CUH;
 				IBSC_MODULE = WatchApp_Extension;
 				INFOPLIST_FILE = WatchApp/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tsybulin.letsshopping.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -812,15 +930,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				DEVELOPMENT_TEAM = V3B8Z5MTV4;
+				DEVELOPMENT_TEAM = 3RR39R6CUH;
 				INFOPLIST_FILE = "WatchApp Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tsybulin.letsshopping.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
 			};
 			name = Debug;
 		};
@@ -828,15 +946,57 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				DEVELOPMENT_TEAM = V3B8Z5MTV4;
+				DEVELOPMENT_TEAM = 3RR39R6CUH;
 				INFOPLIST_FILE = "WatchApp Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tsybulin.letsshopping.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
+		C47FC94720AE1D2F009E3AFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = NCExtension/NCExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3RR39R6CUH;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = NCExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping.NCExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C47FC94820AE1D2F009E3AFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = NCExtension/NCExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3RR39R6CUH;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = NCExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping.NCExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -844,10 +1004,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = LetsShoppingWidget/LetsShoppingWidget.entitlements;
-				DEVELOPMENT_TEAM = V3B8Z5MTV4;
+				DEVELOPMENT_TEAM = 3RR39R6CUH;
 				INFOPLIST_FILE = LetsShoppingWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tsybulin.letsshopping.LetsShoppingWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping.LetsShoppingWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -858,10 +1018,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = LetsShoppingWidget/LetsShoppingWidget.entitlements;
-				DEVELOPMENT_TEAM = V3B8Z5MTV4;
+				DEVELOPMENT_TEAM = 3RR39R6CUH;
 				INFOPLIST_FILE = LetsShoppingWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tsybulin.letsshopping.LetsShoppingWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping.LetsShoppingWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -882,6 +1042,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -889,6 +1050,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -916,7 +1078,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -938,6 +1100,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -945,6 +1108,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -966,7 +1130,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -979,10 +1143,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = letsshopping/letsshopping.entitlements;
-				DEVELOPMENT_TEAM = V3B8Z5MTV4;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3RR39R6CUH;
 				INFOPLIST_FILE = letsshopping/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tsybulin.letsshopping;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -993,10 +1158,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = letsshopping/letsshopping.entitlements;
-				DEVELOPMENT_TEAM = V3B8Z5MTV4;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3RR39R6CUH;
 				INFOPLIST_FILE = letsshopping/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tsybulin.letsshopping;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1019,6 +1185,15 @@
 			buildConfigurations = (
 				C46F534B1DC56FFF0068E28D /* Debug */,
 				C46F534C1DC56FFF0068E28D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C47FC94920AE1D2F009E3AFD /* Build configuration list for PBXNativeTarget "NCExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C47FC94720AE1D2F009E3AFD /* Debug */,
+				C47FC94820AE1D2F009E3AFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

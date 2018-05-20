@@ -54,7 +54,7 @@
 }
 
 - (BOOL)configureView:(NSInteger)step updateMark:(BOOL)updateMark {
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName: @"group.com.tsybulin.letsshopping"] ;
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName: @"group.com.ptsybulin.letsshopping"] ;
     NSMutableDictionary<NSString *, id> *dict = [NSMutableDictionary dictionaryWithDictionary:[sharedDefaults objectForKey:@"shoplist"]] ;
     NSMutableArray *sharedArray = [NSMutableArray arrayWithArray:[dict objectForKey:@"commodities"]] ;
     

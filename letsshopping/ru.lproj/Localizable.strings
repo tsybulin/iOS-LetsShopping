@@ -18,6 +18,7 @@
 "New product" = "Новый продукт" ;
 "Copy" = "Скопировать" ;
 "Widget" = "Виджет" ;
+"Notification" = "Уведомление" ;
 "Use the results?" = "Использовать результаты?" ;
 "Send to..." = "Отправить в..." ;
 "As text..." = "Как текст..." ;
@@ -29,6 +30,7 @@
 "Success" = "Успех" ;
 "The shopping list has been loaded successfully" = "Список покупок был успешно загружен" ;
 "As binary..." = "Как вложение..." ;
+"Expand to interact" = "Разверните для взаимодействия" ;
 
 "shoplists" = "Списки" ;
 "about" = "О программе" ;

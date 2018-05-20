@@ -19,7 +19,7 @@
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.tsybulin.letsshopping.list</string>
+				<string>com.ptsybulin.letsshopping.list</string>
 			</array>
 		</dict>
 	</array>
@@ -36,7 +36,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.1</string>
 	<key>CFBundleVersion</key>
-	<string>14</string>
+	<string>16</string>
 	<key>LSHasLocalizedDisplayName</key>
 	<true/>
 	<key>LSRequiresIPhoneOS</key>
@@ -72,8 +72,10 @@
 			</array>
 			<key>UTTypeDescription</key>
 			<string>Let's Shopping! list</string>
+			<key>UTTypeIconFiles</key>
+			<array/>
 			<key>UTTypeIdentifier</key>
-			<string>com.tsybulin.letsshopping.list</string>
+			<string>com.ptsybulin.letsshopping.list</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -92,8 +94,10 @@
 			</array>
 			<key>UTTypeDescription</key>
 			<string>Let's Shopping! list</string>
+			<key>UTTypeIconFiles</key>
+			<array/>
 			<key>UTTypeIdentifier</key>
-			<string>com.tsybulin.letsshopping.list</string>
+			<string>com.ptsybulin.letsshopping.list</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
