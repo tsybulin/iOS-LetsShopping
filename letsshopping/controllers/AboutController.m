@@ -31,15 +31,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated] ;
-    
-    UIColor *color = [UIColor colorWithRed:41.0/255.0 green:128.0/255.0 blue:185.0/255.0 alpha:1.0f] ;
-    self.navigationController.navigationBar.barTintColor = color ;
-    
-    [[UIView appearanceWhenContainedInInstancesOfClasses:@[[UIAlertController class]]] setTintColor:color] ;
-}
-
 - (IBAction)onSendTouch:(id)sender {
     MFMailComposeViewController *mail = [[MFMailComposeViewController alloc] init] ;
      mail.mailComposeDelegate = self ;

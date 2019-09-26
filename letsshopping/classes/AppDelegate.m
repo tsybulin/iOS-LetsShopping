@@ -23,7 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Hide widget
-    [[NCWidgetController widgetController] setHasContent:NO forWidgetWithBundleIdentifier:@"com.ptsybulin.letsshopping.LetsShoppingWidget"] ;
+    [[NCWidgetController widgetController] setHasContent:NO forWidgetWithBundleIdentifier:@"com.tsybulin.goshopping.LetsShopWidget"] ;
     
     StorageHelper *storageHelper = [StorageHelper sharedHelper] ;
     storageHelper.managedObjectContext = self.persistentContainer.viewContext ;

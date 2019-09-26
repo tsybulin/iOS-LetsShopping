@@ -38,13 +38,6 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated] ;
-    
-    UIColor *color = [UIColor colorWithRed:176.0/255.0 green:79.0/255.0 blue:1.0 alpha:1.0f] ;
-    self.navigationController.navigationBar.barTintColor = color ;
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"shopcategory"]) {
         ((ShopcategoryController *)segue.destinationViewController).shopcategory = sender ;
@@ -80,21 +73,21 @@
     return indexPath.row == 0 ? UITableViewCellEditingStyleInsert : UITableViewCellEditingStyleDelete ;
 }
 
-- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewRowAction *actDelete = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Удалить" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-        [self deleteShopcategory:indexPath] ;
-    }] ;
-    
-    UITableViewRowAction *actAdd = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Новый" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UIContextualAction *caAdd = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:NSLocalizedString(@"New", nil) handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
         self.tableView.editing = NO ;
         [self addShopcategory] ;
     }] ;
-    
+
     if ([self tableView:tableView numberOfRowsInSection:0] > 1) {
-        return @[actDelete] ;
-    } else {
-        return @[actAdd] ;
+        UIContextualAction *caDelete = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:NSLocalizedString(@"Delete", nil) handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+            [self deleteShopcategory:indexPath] ;
+        }] ;
+
+        return [UISwipeActionsConfiguration configurationWithActions:@[caDelete, caAdd]] ;
     }
+    
+    return [UISwipeActionsConfiguration configurationWithActions:@[caAdd]] ;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {

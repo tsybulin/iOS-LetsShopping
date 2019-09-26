@@ -78,14 +78,6 @@ NSString * const C_AMOUNT_SEPARATOR = @" • " ;
     ((UIImageView *)[cell viewWithTag:2]).image = image ;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated] ;
-    
-    UIColor *color = [UIColor colorWithRed:1.0 green:240.0/255.0 blue:0.0 alpha:1.0f] ;
-    self.navigationController.navigationBar.barTintColor = color ;
-    [[UIView appearanceWhenContainedInInstancesOfClasses:@[[UIAlertController class]]] setTintColor:color] ;
-}
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated] ;
     

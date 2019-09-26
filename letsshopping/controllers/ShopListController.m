@@ -17,7 +17,9 @@
 #import "ProductListController.h"
 #import "NSObject+Localizable.h"
 
-@interface ShopListController () <UIViewControllerPreviewingDelegate>
+@interface ShopListController () <UIContextMenuInteractionDelegate> {
+    UIContextMenuInteraction *mi ;
+}
 
 @end
 
@@ -29,28 +31,19 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onRightNavButtonClick:)] ;
 
-    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
-        [self registerForPreviewingWithDelegate:self sourceView:self.view] ;
-    }
 
     cellIdentifier = @"ShoplistCell" ;
 
     listController = [[StorageHelper sharedHelper] shoplistFetchController] ;
     listController.delegate = self ;
     [listController performFetch:nil] ;
+
+    self->mi = [[UIContextMenuInteraction alloc] initWithDelegate:self] ;
+    [self.tableView addInteraction:self->mi] ;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated] ;
-
-    UIColor *color = [UIColor colorWithRed:29.0/255.0 green:126.0/255.0 blue:1.0 alpha:1.0f] ;
-    self.navigationController.navigationBar.barTintColor = color ;
-    
-    [[UIView appearanceWhenContainedInInstancesOfClasses:@[[UIAlertController class]]] setTintColor:color] ;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -113,27 +106,20 @@
     return !self.tableView.editing || [self tableView:tableView numberOfRowsInSection:0] > 1 ? UITableViewCellEditingStyleDelete : UITableViewCellEditingStyleInsert ;
 }
 
-- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    UITableViewRowAction *actCopy = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:NSLocalizedString(@"Copy", nil) handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UIContextualAction *caAdd = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:NSLocalizedString(@"New", nil) handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
         self.tableView.editing = NO ;
-        [self copyListAtPath:indexPath] ;
+        [self addList] ;
     }] ;
 
     if ([self tableView:tableView numberOfRowsInSection:0] > 1) {
-        UITableViewRowAction *actDelete = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:NSLocalizedString(@"Delete", nil) handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        UIContextualAction *caDelete = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:NSLocalizedString(@"Delete", nil) handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
             [self deleteListAtPath:indexPath] ;
         }] ;
 
-        return @[actDelete, actCopy] ;
-    } else {
-        UITableViewRowAction *actAdd = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:NSLocalizedString(@"New", nil) handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-            self.tableView.editing = NO ;
-            [self addList] ;
-        }] ;
-        
-        return @[actAdd, actCopy] ;
+        return [UISwipeActionsConfiguration configurationWithActions:@[caDelete, caAdd]] ;
     }
+    return [UISwipeActionsConfiguration configurationWithActions:@[caAdd]] ;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -204,26 +190,43 @@
     [[StorageHelper sharedHelper] copyShoplist:[listController objectAtIndexPath:indexPath] withIntsort: [self newIntSort]] ;
 }
 
-#pragma mark <UIViewControllerPreviewingDelegate>
+#pragma mark <UIContextMenuInteractionDelegate>
 
-- (nullable UIViewController *)previewingContext:(id <UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location  {
+- (UIContextMenuConfiguration *)contextMenuInteraction:(UIContextMenuInteraction *)interaction configurationForMenuAtLocation:(CGPoint)location {
     CGPoint cellPostion = [self.tableView convertPoint:location fromView:self.view] ;
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:cellPostion] ;
+
+    UIContextMenuConfiguration *cmc = [UIContextMenuConfiguration configurationWithIdentifier:@"KMMain" previewProvider:^UIViewController * _Nullable {
+        if (!indexPath) {
+            return nil ;
+        }
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil] ;
+        ShoplistViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"ShoplistViewController"] ;
+        controller.shoplistID = ((Shoplist *)[self->listController objectAtIndexPath:indexPath]).objectID ;
+        return controller ;
+    } actionProvider:^UIMenu * _Nullable(NSArray<UIMenuElement *> * _Nonnull suggestedActions) {
+        UIAction *a = [UIAction actionWithTitle:NSLocalizedString(@"Edit", @"Edit") image:[UIImage systemImageNamed:@"pencil.and.ellipsis.rectangle"] identifier:@"view" handler:^(__kindof UIAction * _Nonnull action) {
+            if (indexPath) {
+                [self performSegueWithIdentifier:@"shoplist" sender:((Shoplist *)[self->listController objectAtIndexPath:indexPath]).objectID] ;
+            }
+        }] ;
+
+        UIAction *c = [UIAction actionWithTitle:NSLocalizedString(@"Copy", @"Copy") image:[UIImage systemImageNamed:@"rectangle.on.rectangle.angled"] identifier:@"view" handler:^(__kindof UIAction * _Nonnull action) {
+            if (indexPath) {
+                self.tableView.editing = NO ;
+                [self copyListAtPath:indexPath] ;
+            }
+        }] ;
+
+        return [UIMenu menuWithTitle:(indexPath ? ((Shoplist *)[self->listController objectAtIndexPath:indexPath]).name : @"Options")
+                               image:[UIImage systemImageNamed:@"cart"]
+                          identifier:@"Mshoplist"
+                             options:0 children:@[a, c]
+                ] ;
+        
+    }] ;
     
-    if (!indexPath) {
-        return nil ;
-    }
-
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil] ; // ShoplistViewController
-    ShoplistViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"ShoplistViewController"] ;
-    controller.shoplistID = ((Shoplist *)[listController objectAtIndexPath:indexPath]).objectID ;
-    UITableViewCell *tableCell = [self.tableView cellForRowAtIndexPath:indexPath] ;
-    previewingContext.sourceRect = [self.view convertRect:tableCell.frame fromView:self.tableView] ;
-    return controller ;
-}
-
-- (void)previewingContext:(id <UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
-    [self.navigationController showViewController:viewControllerToCommit sender:nil] ;
+    return cmc ;
 }
 
 @end

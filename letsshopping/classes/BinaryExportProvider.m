@@ -16,7 +16,7 @@
 }
 
 - (NSString *)activityViewController:(UIActivityViewController *)activityViewController dataTypeIdentifierForActivityType:(NSString *)activityType {
-    return @"com.ptsybulin.letsshopping.list" ;
+    return @"com.tsybulin.goshopping.list" ;
 }
 
 - (NSString *)activityViewController:(UIActivityViewController *)activityViewController subjectForActivityType:(NSString *)activityType {

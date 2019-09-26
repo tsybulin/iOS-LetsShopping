@@ -75,11 +75,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated] ;
-    UIColor *color = [UIColor colorWithRed:65.0/255.0 green:187.0/255.0 blue:0.0 alpha:1.0f] ;
-    self.navigationController.navigationBar.barTintColor = color ;
-    
-    [[UIView appearanceWhenContainedInInstancesOfClasses:@[[UIAlertController class]]] setTintColor:color] ;
-
     [listController performFetch:nil] ;
     [self.tableView reloadData] ;
 }
@@ -90,7 +85,7 @@
     }
     
     [[StorageHelper sharedHelper] commit] ;
-    [[NCWidgetController widgetController] setHasContent:NO forWidgetWithBundleIdentifier:@"com.ptsybulin.goshopping.LetsShopWidget"] ;
+    [[NCWidgetController widgetController] setHasContent:NO forWidgetWithBundleIdentifier:@"com.tsybulin.goshopping.LetsShopWidget"] ;
     
     [super viewWillDisappear:animated] ;
 }
@@ -158,24 +153,24 @@
     alertActions.popoverPresentationController.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0) ;
 
     UIAlertAction* deleteAllAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Delete all", nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
-        [[StorageHelper sharedHelper] clearShoplist:shoplist] ;
+        [[StorageHelper sharedHelper] clearShoplist:self->shoplist] ;
     }] ;
     [alertActions addAction:deleteAllAction] ;
     
     UIAlertAction* completeAllAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Complete all", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         [self.tableView beginUpdates] ;
-        [[StorageHelper sharedHelper] markShoplist:shoplist shopped:YES] ;
+        [[StorageHelper sharedHelper] markShoplist:self->shoplist shopped:YES] ;
         [self.tableView endUpdates] ;
-        [listController performFetch:nil] ;
+        [self->listController performFetch:nil] ;
         [self.tableView reloadData] ;
     }] ;
     [alertActions addAction:completeAllAction] ;
 
     UIAlertAction* cancelAllAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel all", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         [self.tableView beginUpdates] ;
-        [[StorageHelper sharedHelper] markShoplist:shoplist shopped:NO] ;
+        [[StorageHelper sharedHelper] markShoplist:self->shoplist shopped:NO] ;
         [self.tableView endUpdates] ;
-        [listController performFetch:nil] ;
+        [self->listController performFetch:nil] ;
         [self.tableView reloadData] ;
     }] ;
     [alertActions addAction:cancelAllAction] ;
@@ -242,7 +237,7 @@
 }
 
 - (void)importGroupData {
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName: @"group.com.ptsybulin.letsshopping"] ;
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName: @"group.com.tsybulin.goshopping"] ;
     NSDictionary<NSString *, id> *dict = [sharedDefaults objectForKey:@"shoplist"] ;
     NSArray *sharedArray = [dict objectForKey:@"commodities"] ;
     
@@ -281,7 +276,7 @@
 - (void)shareGroupData {
     NSDictionary<NSString *, id> *dict = [[ImportHelper sharedHelper] dictionaryFromList:shoplist] ;
     
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName: @"group.com.ptsybulin.letsshopping"] ;
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName: @"group.com.tsybulin.goshopping"] ;
     
     NSArray<NSString *> *allKeys = [[sharedDefaults dictionaryRepresentation] allKeys] ;
     for (NSString *key in allKeys) {
@@ -296,7 +291,7 @@
 - (void)shareWithWidget {
     [self shareGroupData] ;
     
-    [[NCWidgetController widgetController] setHasContent:YES forWidgetWithBundleIdentifier:@"com.ptsybulin.letsshopping.LetsShoppingWidget"] ;
+    [[NCWidgetController widgetController] setHasContent:YES forWidgetWithBundleIdentifier:@"com.tsybulin.goshopping.LetsShopWidget"] ;
     
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Use the results?", nil) message:nil preferredStyle:UIAlertControllerStyleActionSheet] ;
 
@@ -304,7 +299,7 @@
     alert.popoverPresentationController.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0) ;
     
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        [[NCWidgetController widgetController] setHasContent:NO forWidgetWithBundleIdentifier:@"com.ptsybulin.letsshopping.LetsShoppingWidget"] ;
+        [[NCWidgetController widgetController] setHasContent:NO forWidgetWithBundleIdentifier:@"com.tsybulin.goshopping.LetsShopWidget"] ;
     }] ;
     [alert addAction:defaultAction] ;
     

@@ -65,6 +65,7 @@
 		C4A3C5E41DC54783001361FC /* ShopListController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A3C5DB1DC54783001361FC /* ShopListController.m */; };
 		C4A3C5E51DC54783001361FC /* ShoplistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A3C5DD1DC54783001361FC /* ShoplistViewController.m */; };
 		C4A3C5E81DC54804001361FC /* catalog.json in Resources */ = {isa = PBXBuildFile; fileRef = C4A3C5EA1DC54804001361FC /* catalog.json */; };
+		C4BFBCD3233CA78E006DF7CF /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BFBCD2233CA78E006DF7CF /* NavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -235,6 +236,8 @@
 		C4A3C5DD1DC54783001361FC /* ShoplistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoplistViewController.m; sourceTree = "<group>"; };
 		C4A3C5E91DC54804001361FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/catalog.json; sourceTree = "<group>"; };
 		C4A3C5EB1DC54808001361FC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/catalog.json; sourceTree = "<group>"; };
+		C4BFBCD1233CA78E006DF7CF /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		C4BFBCD2233CA78E006DF7CF /* NavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -465,6 +468,8 @@
 				C4A3C5DB1DC54783001361FC /* ShopListController.m */,
 				C4A3C5DC1DC54783001361FC /* ShoplistViewController.h */,
 				C4A3C5DD1DC54783001361FC /* ShoplistViewController.m */,
+				C4BFBCD1233CA78E006DF7CF /* NavigationController.h */,
+				C4BFBCD2233CA78E006DF7CF /* NavigationController.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -610,7 +615,7 @@
 			};
 			buildConfigurationList = C4A3C57D1DC53C2C001361FC /* Build configuration list for PBXProject "letsshopping" */;
 			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -732,6 +737,7 @@
 				C4A3C5DF1DC54783001361FC /* BaseFetchedResultsController.m in Sources */,
 				C4A3C5B21DC542C0001361FC /* Shoplist.m in Sources */,
 				C4A3C5B11DC542C0001361FC /* ShopCategory.m in Sources */,
+				C4BFBCD3233CA78E006DF7CF /* NavigationController.m in Sources */,
 				C4A3C5C11DC54652001361FC /* BinaryExportProvider.m in Sources */,
 				C4A3C5E01DC54783001361FC /* ProductController.m in Sources */,
 				C4A3C5E31DC54783001361FC /* ShopcategoryListController.m in Sources */,
@@ -898,15 +904,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3RR39R6CUH;
+				DEVELOPMENT_TEAM = 5A7CP8MN58;
 				IBSC_MODULE = WatchApp_Extension;
 				INFOPLIST_FILE = WatchApp/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsybulin.goshopping.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Debug;
 		};
@@ -914,15 +920,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3RR39R6CUH;
+				DEVELOPMENT_TEAM = 5A7CP8MN58;
 				IBSC_MODULE = WatchApp_Extension;
 				INFOPLIST_FILE = WatchApp/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsybulin.goshopping.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Release;
 		};
@@ -930,15 +936,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				DEVELOPMENT_TEAM = 3RR39R6CUH;
+				DEVELOPMENT_TEAM = 5A7CP8MN58;
 				INFOPLIST_FILE = "WatchApp Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsybulin.goshopping.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Debug;
 		};
@@ -946,15 +952,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				DEVELOPMENT_TEAM = 3RR39R6CUH;
+				DEVELOPMENT_TEAM = 5A7CP8MN58;
 				INFOPLIST_FILE = "WatchApp Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsybulin.goshopping.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Release;
 		};
@@ -968,14 +974,14 @@
 				CODE_SIGN_ENTITLEMENTS = NCExtension/NCExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3RR39R6CUH;
+				DEVELOPMENT_TEAM = 5A7CP8MN58;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = NCExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping.NCExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsybulin.goshopping.NCExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -989,14 +995,14 @@
 				CODE_SIGN_ENTITLEMENTS = NCExtension/NCExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3RR39R6CUH;
+				DEVELOPMENT_TEAM = 5A7CP8MN58;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = NCExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping.NCExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsybulin.goshopping.NCExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1004,13 +1010,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = LetsShoppingWidget/LetsShoppingWidget.entitlements;
-				DEVELOPMENT_TEAM = 3RR39R6CUH;
+				DEVELOPMENT_TEAM = 5A7CP8MN58;
 				INFOPLIST_FILE = LetsShoppingWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping.LetsShoppingWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsybulin.goshopping.LetsShopWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1018,13 +1024,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = LetsShoppingWidget/LetsShoppingWidget.entitlements;
-				DEVELOPMENT_TEAM = 3RR39R6CUH;
+				DEVELOPMENT_TEAM = 5A7CP8MN58;
 				INFOPLIST_FILE = LetsShoppingWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping.LetsShoppingWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsybulin.goshopping.LetsShopWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1078,7 +1084,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1130,7 +1136,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1144,12 +1150,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = letsshopping/letsshopping.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3RR39R6CUH;
+				DEVELOPMENT_TEAM = 5A7CP8MN58;
 				INFOPLIST_FILE = letsshopping/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsybulin.goshopping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1159,12 +1165,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = letsshopping/letsshopping.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3RR39R6CUH;
+				DEVELOPMENT_TEAM = 5A7CP8MN58;
 				INFOPLIST_FILE = letsshopping/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ptsybulin.letsshopping;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsybulin.goshopping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

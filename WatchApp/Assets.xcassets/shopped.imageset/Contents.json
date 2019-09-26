@@ -2,18 +2,31 @@
   "images" : [
     {
       "idiom" : "watch",
+      "filename" : "shopped@2-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "watch",
-      "screenWidth" : "{130,145}",
       "filename" : "shopped.png",
+      "screen-width" : "<=145",
       "scale" : "2x"
     },
     {
       "idiom" : "watch",
-      "screenWidth" : "{146,165}",
+      "filename" : "shopped@2-2.png",
+      "screen-width" : ">161",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "watch",
       "filename" : "shopped@2.png",
+      "screen-width" : ">145",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "watch",
+      "filename" : "shopped@2-3.png",
+      "screen-width" : ">183",
       "scale" : "2x"
     }
   ],
